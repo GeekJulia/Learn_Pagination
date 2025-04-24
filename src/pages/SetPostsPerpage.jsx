@@ -1,9 +1,11 @@
 const SetPostsPerpage = ({setPostsPerPage,setCurrentPage}) => {
+
     const handleChange = (e) => {
         const value = parseInt(e.target.value);
         setPostsPerPage(value)
         setCurrentPage(1)
     }
+    
   return (
     <div>
       <label htmlFor="cryptopage">
