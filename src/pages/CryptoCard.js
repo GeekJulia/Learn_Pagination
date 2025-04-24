@@ -1,6 +1,6 @@
 import React from "react";
 
-//cryptocard.css
+import "../styles/Cryptocard.css"
 
 const CryptoCard = ({image, name, price}) => {
     return(
