@@ -32,7 +32,12 @@ const App =()=>{
         <div className="app">
             <h1>Crypto Gallery</h1>
             <CryptoList coinsData={currentPost}/>
-            <Pagination totalPosts = {coinsData.length} postsPerPage={postsPerPage} />
+            <Pagination 
+            totalPosts = {coinsData.length} 
+            postsPerPage={postsPerPage} 
+            setCurrentPage={setCurrentPage} 
+            currentPage={current_page}
+            />
         </div>
     );
 };
