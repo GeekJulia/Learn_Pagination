@@ -1,4 +1,4 @@
-import React from "react";
+
 import CryptoCard from "./CryptoCard";
 
 import "../styles/CryptoList.css"
