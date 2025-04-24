@@ -4,6 +4,7 @@ import axios from "axios";
 import "./App.css"
 import CryptoList from "./pages/CryptoList";
 import Pagination from "./pages/Pagination";
+import SetPostsPerpage from "./pages/SetPostsPerpage";
 
 const App =()=>{
     const [coinsData,setCoinsData] = useState([]);
@@ -25,20 +26,26 @@ const App =()=>{
         }
         fetchData();
     },[])
+
     const lastPostIndex = current_page * postsPerPage
     const firstPostIndex = lastPostIndex - postsPerPage
-    const currentPost = coinsData.slice(firstPostIndex,lastPostIndex)
+    const currentPost = coinsData.slice(firstPostIndex,lastPostIndex) // we are dictating what should be shown per page
+
     return(
         <div className="app">
             <h1>Crypto Gallery</h1>
-            <CryptoList coinsData={currentPost}/>
+            <CryptoList coinsData={currentPost}/> 
             <Pagination 
             totalPosts = {coinsData.length} 
             postsPerPage={postsPerPage} 
             setCurrentPage={setCurrentPage} 
             currentPage={current_page}
             />
+            <SetPostsPerpage
+            setPostsPerPage={setPostsPerPage}
+            setCurrentPage={{setCurrentPage}}/>
         </div>
     );
+
 };
 export default App;
