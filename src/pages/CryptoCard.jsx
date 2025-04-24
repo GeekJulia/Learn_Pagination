@@ -1,5 +1,3 @@
-import React from "react";
-
 import "../styles/Cryptocard.css"
 
 const CryptoCard = ({image, name, price}) => {

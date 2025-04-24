@@ -1,4 +1,3 @@
-
 import CryptoCard from "./CryptoCard";
 
 import "../styles/CryptoList.css"

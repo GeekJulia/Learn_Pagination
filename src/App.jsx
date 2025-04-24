@@ -3,9 +3,13 @@ import axios from "axios";
 
 import "./App.css"
 import CryptoList from "./pages/CryptoList";
+import Pagination from "./pages/Pagination";
 
 const App =()=>{
     const [coinsData,setCoinsData] = useState([]);
+    const[current_page, setCurrentPage] = useState(1);
+    const[postsPerPage,setPostsPerPage] = useState(8); //we want to display two rows per page
+
 
     useEffect( () => {
         const fetchData = async () => {
@@ -21,11 +25,14 @@ const App =()=>{
         }
         fetchData();
     },[])
-
+    const lastPostIndex = current_page * postsPerPage
+    const firstPostIndex = lastPostIndex - postsPerPage
+    const currentPost = coinsData.slice(firstPostIndex,lastPostIndex)
     return(
         <div className="app">
             <h1>Crypto Gallery</h1>
-            <CryptoList coinsData={coinsData}/>
+            <CryptoList coinsData={currentPost}/>
+            <Pagination totalPosts = {coinsData.length} postsPerPage={postsPerPage} />
         </div>
     );
 };
