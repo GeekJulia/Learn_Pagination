@@ -10,7 +10,7 @@ const CryptoCard = ({image, name, price}) => {
             </div>
             <div className="card-info">
                 <h2>{name}</h2>
-                <h3>${price.toLocalString()}</h3>
+                <h3>${price.toLocaleString()}</h3>
             </div>
         </div>
     )

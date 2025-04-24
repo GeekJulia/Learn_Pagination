@@ -18,9 +18,9 @@ const App =()=>{
                 console.error("Error fetching data:",error)
             }
         }
+        fetchData();
     },[])
 
-    fetchData();
     return(
         <div className="app">
             <h1>Crypto Gallery</h1>
