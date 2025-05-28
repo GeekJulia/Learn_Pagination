@@ -1,0 +1,2 @@
+Pagination is a method by which a document is seperated into pages,
+and numbers are given.
